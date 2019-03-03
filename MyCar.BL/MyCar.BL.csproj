@@ -8,7 +8,6 @@
     <Folder Include="Installer\" />
     <Folder Include="Facades\" />
     <Folder Include="Dto\" />
-    <Folder Include="Queries\FirstLevel\" />
   </ItemGroup>
 
   <ItemGroup>
