@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Castle.Facilities.TypedFactory;
+using Castle.Windsor;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyCar.BL.Facades;
+using MyCar.BL.Interfaces.Facades;
 
-namespace MyCar
+namespace MyCar.MVC
 {
     public class Startup
     {
@@ -24,15 +22,17 @@ namespace MyCar
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
-
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            var container = new WindsorContainer();
+            container.Install(new DAL.Installer.Installer());
+            container.Install(new BL.Installer.Installer());
+
+            container.AddFacility<TypedFactoryFacility>();
+
+            services.AddSingleton<ICarFacade, CarFacade>();
+            services.AddSingleton<IGasolineFacade, GasolineFacade>();
+            services.AddSingleton<IUserFacade, UserFacade>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
