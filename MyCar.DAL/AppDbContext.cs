@@ -5,11 +5,11 @@ namespace MyCar.DAL
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<Cars> CarsTable { get; set; }
+        public DbSet<Car> CarsTable { get; set; }
 
         public DbSet<Gasoline> GasolineTable { get; set; }
 
-        public DbSet<Users> UsersTable { get; set; }
+        public DbSet<User> UsersTable { get; set; }
 
         public AppDbContext()
         {

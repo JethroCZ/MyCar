@@ -1,8 +1,9 @@
 ﻿using System;
+using Riganti.Utils.Infrastructure.Core;
 
 namespace MyCar.DAL.Entities
 {
-    public class Gasoline
+    public class Gasoline : IEntity<int>
     {
         public int Id { get; set; }
 
