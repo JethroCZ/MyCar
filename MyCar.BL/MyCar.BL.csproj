@@ -7,7 +7,6 @@
   <ItemGroup>
     <Folder Include="Installer\" />
     <Folder Include="Facades\" />
-    <Folder Include="Dto\" />
   </ItemGroup>
 
   <ItemGroup>
