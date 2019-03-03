@@ -1,4 +1,5 @@
-﻿using MyCar.DAL;
+﻿using MyCar.BL.Interfaces.Queries;
+using MyCar.DAL;
 using MyCar.DAL.Uow;
 using Riganti.Utils.Infrastructure.EntityFrameworkCore;
 

@@ -1,5 +1,7 @@
 ﻿using System.Linq;
 using MyCar.BL.Dto;
+using MyCar.BL.Interfaces.Queries;
+using MyCar.BL.Interfaces.Queries.FirstLevel;
 using MyCar.BL.Queries.FirstLevel;
 using MyCar.DAL.Entities;
 using MyCar.DAL.Uow;
