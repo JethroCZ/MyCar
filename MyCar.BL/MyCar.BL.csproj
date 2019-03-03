@@ -4,4 +4,20 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Installer\" />
+    <Folder Include="Facades\" />
+    <Folder Include="Dto\" />
+    <Folder Include="Queries\FirstLevel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Riganti.Utils.Infrastructure.Core" Version="2.2.3" />
+    <PackageReference Include="Riganti.Utils.Infrastructure.EntityFrameworkCore" Version="2.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyCar.DAL\MyCar.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
